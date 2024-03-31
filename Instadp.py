@@ -1,20 +1,25 @@
 import requests
 from bs4 import BeautifulSoup
 
-print ("   ~~~~!!!!!!.                 .:!!!!!!!!!UWWW$$$
+print('''
+                              .::!!!!!!!:.
+  .!!!!!:.                        .:!!!!!!!!!!!!
+  ~~~~!!!!!!.                 .:!!!!!!!!!UWWW$$$
       :$$NWX!!:           .:!!!!!!XUWW$$$$$$$$$P
       $$$$$##WX!:      .<!!!!UW$$$$"  $$$$$$$$#
       $$$$$  $$$UX   :!!UW$$$$$$$$$   4$$$$$*
       ^$$$B  $$$$\     $$$$$$$$$$$$   d$$R"
         "*$bd$$$$      '*$$$$$$$$$$$o+#"
-
         _
      /\                        (_)
     /  \   _ __  ___  __ _ _ __ _
    / /\ \ | '_ \/ __|/ _` | '__| |
   / ____ \| | | \__ \ (_| | |  | |
  /_/    \_\_| |_|___/\__,_|_|  |_|
- ")
+ 
+   Author : AnsariHacker07
+   github : https://github.com/AnsariHacker07
+   Instagram : hacker_ansari_07  ''')
 
 # Prompt the user to enter the Instagram username
 username = input('Enter the Instagram username: ')
@@ -42,3 +47,4 @@ if response.status_code == 200:
 else:
     print('Failed to download the profile picture.')
     print(f'Error: {response.status_code}')
+      
