@@ -1,6 +1,21 @@
 import requests
 from bs4 import BeautifulSoup
 
+print ("   ~~~~!!!!!!.                 .:!!!!!!!!!UWWW$$$
+      :$$NWX!!:           .:!!!!!!XUWW$$$$$$$$$P
+      $$$$$##WX!:      .<!!!!UW$$$$"  $$$$$$$$#
+      $$$$$  $$$UX   :!!UW$$$$$$$$$   4$$$$$*
+      ^$$$B  $$$$\     $$$$$$$$$$$$   d$$R"
+        "*$bd$$$$      '*$$$$$$$$$$$o+#"
+
+        _
+     /\                        (_)
+    /  \   _ __  ___  __ _ _ __ _
+   / /\ \ | '_ \/ __|/ _` | '__| |
+  / ____ \| | | \__ \ (_| | |  | |
+ /_/    \_\_| |_|___/\__,_|_|  |_|
+ ")
+
 # Prompt the user to enter the Instagram username
 username = input('Enter the Instagram username: ')
 
@@ -19,10 +34,10 @@ if response.status_code == 200:
     profile_pic_response = requests.get(profile_pic_url)
 
     # Save the profile picture to a file
-    with open('profile_pic.jpg', 'wb') as file:
+    with open('/storage/emulated/0/profile_pic.jpg', 'wb') as file:
         file.write(profile_pic_response.content)
 
-    print('Profile picture saved to profile_pic.jpg')
+    print('Profile picture saved to /storage/emulated/0/profile_pic.jpg')
 
 else:
     print('Failed to download the profile picture.')
