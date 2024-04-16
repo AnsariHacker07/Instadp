@@ -1,5 +1,6 @@
-import requests
-from bs4 import BeautifulSoup
+import os
+from instaloader import Instaloader, Profile
+
 
 print('''
                               .::!!!!!!!:.
@@ -21,30 +22,19 @@ print('''
    github : https://github.com/AnsariHacker07
    Instagram : hacker_ansari_07  ''')
 
-# Prompt the user to enter the Instagram username
-username = input('Enter the Instagram username: ')
 
-# Send a GET request to the Instagram profile page
-response = requests.get(f'https://www.instagram.com/{username}/')
+# Initialize Instaloader
+L = Instaloader()
 
-# Check if the request was successful
-if response.status_code == 200:
-    # Parse the HTML content of the page using BeautifulSoup
-    soup = BeautifulSoup(response.content, 'html.parser')
+# Prompt the user for the Instagram username
+profile_name = input("Enter the Instagram username: ")
 
-    # Find the profile picture URL
-    profile_pic_url = soup.find('meta', attrs={'property': 'og:image'})['content']
+# Specify the download location
+download_location = "/storage/emulated/0/"
+os.chdir(download_location)
 
-    # Send a GET request to the profile picture URL
-    profile_pic_response = requests.get(profile_pic_url)
+# Download profile picture
+profile = Profile.from_username(L.context, profile_name)
+L.download_profile(profile, profile_pic_only=True)
 
-    # Save the profile picture to a file
-    with open('/storage/emulated/0/profile_pic.jpg', 'wb') as file:
-        file.write(profile_pic_response.content)
-
-    print('Profile picture saved to /storage/emulated/0/profile_pic.jpg')
-
-else:
-    print('Failed to download the profile picture.')
-    print(f'Error: {response.status_code}')
-      
+print("Profile picture downloaded to", os.getcwd())
