@@ -16,4 +16,6 @@ git clone https://github.com/AnsariHacker07/Instadp
 
 cd Instadp
 
+pip install -r requirements.sh
+
 python Instadp.py
